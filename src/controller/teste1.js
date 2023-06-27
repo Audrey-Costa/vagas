@@ -5,7 +5,12 @@ const getUser = ( req, res ) => {
     
     const user = serviceTeste1.getUser(name);
     if (user) {
-        res.status(200).send(user);
+        const dataResponse = {
+            id: user.id,
+            name: user.name,
+            job: user.job
+        };
+        res.status(200).send(dataResponse);
     }else{
         res.status(404).send("User not found");
     };
@@ -13,8 +18,14 @@ const getUser = ( req, res ) => {
 
 const getUsers = ( req, res ) => {
     const users = serviceTeste1.getUsers();
-    
-    res.send(users);    
+    const dataResponse = users.map(user => {
+        return {
+            id: user.id,
+            name: user.name,
+            job: user.job
+        };
+    });
+    res.send(dataResponse);    
 };
 
 export const controllerTeste1 = {

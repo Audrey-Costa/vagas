@@ -3,9 +3,10 @@ import { repositoryTeste1 } from "../repository/teste1.js";
 const getUser = ( name ) => {
     const data = getUsers();
 
-    for(const user of data) {
-        if(user.name == name) {
-            return(user);
+    for(let index = 0; index < data.length; index++) {
+        if(data[index].name == name) {
+            repositoryTeste1.countUser(index);
+            return(data[index]);
         };
     };
     return null;
@@ -13,6 +14,7 @@ const getUser = ( name ) => {
 
 const getUsers = () => {
     const data = repositoryTeste1.getUsers();
+
     return data;
 };
 

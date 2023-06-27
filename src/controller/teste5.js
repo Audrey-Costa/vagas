@@ -5,7 +5,11 @@ function getUserAccessCounter(req, res){
 
     const count = serviceTeste5.getUserAccessCounter(name);
 
-    res.status(200).send("Usuário " +  name  + "  foi lido 0 vezes.");
+    if (count === null){
+        res.status(404).send(`Usuário não encontrado.`);
+    }else{
+        res.status(200).send(`Usuário ${name} foi lido ${count} vezes.`);
+    };
 };
 
 export const controllerTeste5 = {
