@@ -19,6 +19,9 @@ const getUser = ( req, res ) => {
 const getUsers = ( req, res ) => {
     const users = serviceTeste1.getUsers();
     const dataResponse = users.map(user => {
+        if (user === null) {
+            return null;
+        }
         return {
             id: user.id,
             name: user.name,

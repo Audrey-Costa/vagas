@@ -4,7 +4,7 @@ const getUser = ( name ) => {
     const data = getUsers();
 
     for(let index = 0; index < data.length; index++) {
-        if(data[index].name == name) {
+        if(data[index]?.name == name) {
             repositoryTeste1.countUser(index);
             return(data[index]);
         };
