@@ -1,11 +1,15 @@
-
 const fakeData  =  [
     {
         id: 1,
         name: "João Oliveira",
         job: "Desenvolvedor"
+    },
+    {
+        id: 2,
+        name: "Audrey",
+        job: "Desenvolvedor"
     }
 ]
 
 
-module.exports = fakeData;
+export default fakeData;
