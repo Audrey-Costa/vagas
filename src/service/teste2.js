@@ -3,6 +3,11 @@ import jwt from 'jsonwebtoken';
 
 function postUser(name, job){
     const newUser = repositoryTeste2.postUser(name, job);
+    
+    if (!newUser){
+        return {undefined, undefined};
+    };
+
     const newUserResponse = {
         name: newUser.name,
         job: newUser.job

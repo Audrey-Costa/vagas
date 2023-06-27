@@ -9,9 +9,6 @@ export default async function errorHandlerMiddleware(error, req, res, next){
     case "Bad Request":
       return res.status(400).send(error.message);
     case "Forbidden":
-      return res.status(403).send(error.message);
-    case "Method not allowed":
-      return res.status(403).send(error.message);
   };
  
   return res.sendStatus(500);

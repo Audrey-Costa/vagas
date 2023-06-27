@@ -4,7 +4,6 @@ function updateUser(req, res) {
     const id =  req.query.id;
     const name = req.body.name;
     const job = req.body.job;
-    console.log(req.headers.authorization)
 
     if (!id) {
         return res.sendStatus(404);
