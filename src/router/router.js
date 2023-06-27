@@ -4,6 +4,7 @@ import { controllerTeste2 } from "../controller/teste2.js";
 import { controllerTeste3 } from "../controller/teste3.js";
 import { controllerTeste4 } from "../controller/teste4.js";
 import { controllerTeste5 } from "../controller/teste5.js";
+import { validateToken } from "../middleware/validateToken.js";
 
 const testeRouter = Router();
 
@@ -17,9 +18,9 @@ testeRouter.get('/', function(_, res){
 });
 testeRouter.get("/user", controllerTeste1.getUser);
 testeRouter.get("/users", controllerTeste1.getUsers);
-testeRouter.post("/users", controllerTeste2.postUser)
-testeRouter.delete("/users", controllerTeste3.deleteUser)
-testeRouter.put("/users", controllerTeste4.updateUser)
+testeRouter.post("/users", controllerTeste2.postUser);
+testeRouter.delete("/users", validateToken, controllerTeste3.deleteUser);
+testeRouter.put("/users", validateToken, controllerTeste4.updateUser);
 testeRouter.get("/users/access", controllerTeste5.getUserAccessCounter);
 
 export default testeRouter;
