@@ -2,7 +2,7 @@ import data from "../db/fakeData.js";
 
 function postUser(name, job){
     const newUser = {
-        id: data.length,
+        id: data.length + 1,
         name: name,
         job: job,
     };
