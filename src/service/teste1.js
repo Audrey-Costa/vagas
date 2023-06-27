@@ -3,9 +3,9 @@ import { repositoryTeste1 } from "../repository/teste1.js";
 const getUser = ( name ) => {
     const data = getUsers();
 
-    for(let i = 0; i < data.length;  i++) {
-        if(i.name == name) {
-            return(data[i]);
+    for(const user of data) {
+        if(user.name == name) {
+            return(user);
         };
     };
     return null;

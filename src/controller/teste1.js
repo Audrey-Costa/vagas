@@ -7,7 +7,7 @@ const getUser = ( req, res ) => {
     if (user) {
         res.status(200).send(user);
     }else{
-        res.sendStatus(404);
+        res.status(404).send("User not found");
     };
 };
 
